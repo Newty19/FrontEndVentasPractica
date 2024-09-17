@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="title">
+        <h4>Ventas</h4>
+        <button type="button" class="btn btn-primary" routerLink="/agregarVenta">Agregar Venta</button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Folio</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of ventas" class="table-active">
+            <th>{{item.cliente}}</th>
+            <td>{{item.folio}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.producto}}</td>
+            <td>{{item.cantidad}}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
