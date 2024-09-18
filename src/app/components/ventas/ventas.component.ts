@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Venta } from 'src/app/interfaces/Venta';
+import { VentasService } from 'src/app/services/ventas.service';
 
 @Component({
   selector: 'app-ventas',
@@ -7,25 +8,17 @@ import { Venta } from 'src/app/interfaces/Venta';
   styleUrls: ['./ventas.component.css']
 })
 export class VentasComponent implements OnInit {
-  ventas: Venta[] = [
-    { //id: 1,
-      cliente: 'Juan',
-      folio: 'VEN-1-AC',
-      fecha: "2024-01-16",
-      producto: "Galletas",
-      cantidad: 3
-    },
-    { //id: 2,
-      cliente: 'Juan',
-      folio: 'VEN-1-AC',
-      fecha: "2024-01-16",
-      producto: "Soda",
-      cantidad: 7
-    }
-  ]
-  constructor() { }
+  ventas: Venta[] = []
+  constructor(private _ventasService: VentasService) { }
 
   ngOnInit(): void {
+    this.getListVentas();
+  }
+
+  getListVentas(){
+    this._ventasService.getListVentas().subscribe((data) => {
+      this.ventas = data;
+    })
   }
 
 }
