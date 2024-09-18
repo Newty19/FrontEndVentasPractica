@@ -8,14 +8,14 @@ import { Venta } from 'src/app/interfaces/Venta';
 })
 export class VentasComponent implements OnInit {
   ventas: Venta[] = [
-    { id: 1,
+    { //id: 1,
       cliente: 'Juan',
       folio: 'VEN-1-AC',
       fecha: "2024-01-16",
       producto: "Galletas",
       cantidad: 3
     },
-    { id: 2,
+    { //id: 2,
       cliente: 'Juan',
       folio: 'VEN-1-AC',
       fecha: "2024-01-16",

@@ -1,5 +1,5 @@
 export interface Venta {
-    id: number;
+    //id: number;
     cliente:string;
     folio: string;
     fecha: string;
