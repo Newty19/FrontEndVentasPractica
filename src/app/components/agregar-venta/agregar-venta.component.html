@@ -4,17 +4,27 @@
             <div class="card-header">Agregar Venta</div>
             <div class="card-body">
                 <form [formGroup]="form" (ngSubmit)="agregarVenta()">
-                    <input formControlName="cliente" type="text" class="form-control mt-2" placeholder="Cliente">
+                    <div>
+                        <label for="" class="form-label mt-4">Cliente</label>
+                        <select class="form-select" id="cliente">
+                          <option *ngFor="let item of ventas">{{item.cliente}}</option>
+                        </select>
+                      </div>
                     <input formControlName="folio" type="text" class="form-control mt-2" placeholder="Folio">
                     <input formControlName="fecha" type="text" class="form-control mt-2" placeholder="Fecha">
-                    <input formControlName="producto" type="text" class="form-control mt-2" placeholder="Producto">
+                    <div>
+                        <label for="" class="form-label mt-4">Producto</label>
+                        <select class="form-select" id="producto">
+                          <option *ngFor="let item of ventas" value="{{item.producto}}">{{item.producto}}</option>
+                        </select>
+                      </div>
                     <input formControlName="cantidad" type="number" class="form-control mt-2" placeholder="Cantidad">
                     <div class="row mt-2 text-center">
                         <div class="col-lg-6">
                             <button routerLink="/" type="button" class="btn btn-outline-info">Volver</button>
                         </div>
                         <div class="col-lg-6">
-                            <button [disabled]="form.invalid" type="submit" class="btn btn-outline-success">Agregar</button>
+                            <button type="submit" class="btn btn-outline-success">Agregar</button>
                         </div>
                     </div>
                 </form>

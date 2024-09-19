@@ -1,0 +1,21 @@
+<div class="row mt-5">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
+            <div class="card-header">Agregar Producto</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="agregarProducto()">
+                    <input formControlName="clave" type="number" class="form-control mt-2" placeholder="Clave">
+                    <input formControlName="descripcion" type="text" class="form-control mt-2" placeholder="Descripcion">
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-outline-info">Volver</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-outline-success">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

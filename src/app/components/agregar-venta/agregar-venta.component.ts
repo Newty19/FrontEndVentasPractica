@@ -10,7 +10,7 @@ import { VentasService } from 'src/app/services/ventas.service';
 })
 export class AgregarVentaComponent implements OnInit {
   form: FormGroup;
-
+  ventas: Venta[] = [];
   constructor(private fb: FormBuilder,
     private _ventasService: VentasService) {
     this.form = this.fb.group({
@@ -23,16 +23,25 @@ export class AgregarVentaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getListVentas();
+  }
+
+  getListVentas(){
+    this._ventasService.getListVentas().subscribe((data) => {
+      this.ventas = data;
+    })
   }
 
   agregarVenta() {
+    let productos = document.getElementById("producto") as HTMLInputElement;
     const venta: Venta = {
       cliente: this.form.value.cliente,
       folio: this.form.value.folio,
       fecha: this.form.value.fecha,
-      producto: this.form.value.producto,
+      producto: productos.value,
       cantidad: this.form.value.cantidad
     }
+    console.log(venta);
     this._ventasService.saveVentas(venta).subscribe(() => {
       console.log('Venta agregada');
     })

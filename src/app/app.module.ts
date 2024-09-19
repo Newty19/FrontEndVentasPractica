@@ -9,13 +9,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { AgregarVentaComponent } from './components/agregar-venta/agregar-venta.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
+import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     VentasComponent,
-    AgregarVentaComponent
+    AgregarVentaComponent,
+    AgregarProductoComponent,
+    AgregarClienteComponent
   ],
   imports: [
     BrowserModule,

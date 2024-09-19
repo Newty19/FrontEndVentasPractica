@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
+            <div class="card-header">Agregar Cliente</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="agregarCliente()">
+                    <input formControlName="nombre" type="text" class="form-control mt-2" placeholder="Nombre">
+                    <input formControlName="direccion" type="text" class="form-control mt-2" placeholder="Direccion">
+                    <div>
+                        <label for="" class="form-label mt-4">Tipo de Cliente</label>
+                        <select class="form-select" id="tipoCliente">
+                          <option *ngFor="let item of tipoCliente">{{item.descripcion}}</option>
+                        </select>
+                      </div>
+                    <input formControlName="fecha" type="text" class="form-control mt-2" placeholder="Fecha de Alta">
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-outline-info">Volver</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-outline-success">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
